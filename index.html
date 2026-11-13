@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Viacha Conecta | Directorio de negocios</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header id="inicio">
+        <div class="brand">
+            <img class="logo" src="C:\Users\NELLY MENDOZA\Desktop\logo.jpeg" alt="Logotipo Viacha Conecta"
+                onerror="this.style.display='none';document.getElementById('logoFallback').style.display='grid'">
+            <div id="logoFallback" class="logo-fallback" style="display:none">VC</div>
+            <div>
+                <h1>Viacha Conecta</h1>
+                <p>Conectamos ideas, diseñamos soluciones.</p>
+            </div>
+        </div>
+        <nav><a href="#inicio">Inicio</a><a href="#servicios">Servicios</a><a href="#contacto">Contacto</a></nav>
+    </header>
+
+    <div class="layout">
+        <aside>
+            <h3>Menú de Viacha Conecta</h3>
+            <div class="side-list">
+                <button class="side-btn active" onclick="irA('inicio',this)"><span class="icon">🏠</span>Inicio</button>
+                <button class="side-btn" onclick="irA('servicios',this)"><span class="icon">🧰</span>Servicios</button>
+                <button class="side-btn" onclick="irA('negocios',this)"><span class="icon">🏪</span>Ver
+                    negocios</button>
+                <button class="side-btn" onclick="irA('publicar',this)"><span class="icon">➕</span>Subir
+                    negocio</button>
+                <button class="side-btn" onclick="irA('como-funciona',this)"><span class="icon">💡</span>Cómo
+                    funciona</button>
+                <button class="side-btn" onclick="irA('contacto',this)"><span class="icon">💬</span>Contacto</button>
+            </div>
+            <div class="creator-box">
+                <button id="adminToggle" class="side-btn" type="button" onclick="alternarModoCreadora()"><span
+                        class="icon">🔐</span><span id="adminToggleText">Modo creadora</span></button>
+                <p id="adminStatus" class="muted">El botón de borrar está oculto.</p>
+            </div>
+            <div class="notice">¿Tienes un emprendimiento? Publícalo en el directorio para que los visitantes conozcan
+                tus productos o servicios.</div>
+        </aside>
+
+        <main>
+            <div class="hero">
+                <div class="hero-inner">
+                    <span class="tag">MARKETING · PUBLICIDAD · EMPRENDIMIENTOS</span>
+                    <h2>¡Conecta tu negocio con más clientes!</h2>
+                    <p>Viacha Conecta ayuda a pequeños negocios y emprendedores a promocionarse. Los clientes pueden
+                        explorar los negocios publicados y comunicarse con ellos.</p>
+                    <a class="btn yellow" href="#negocios"> Explorar negocios</a>
+                    <a class="btn white" href="#publicar"> Publicar mi negocio</a>
+                </div>
+            </div>
+
+            <section id="servicios">
+                <div class="section-head">
+                    <h2>Nuestros servicios digitales</h2>
+                    <p>Elige el servicio que necesitas para hacer crecer tu emprendimiento.</p>
+                </div>
+                <div class="grid">
+                    <article class="card"><img
+                            src="https://images.unsplash.com/photo-1626785774573-4b799315345d?auto=format&fit=crop&w=700&q=85"
+                            alt="Diseño gráfico">
+                        <div class="card-body">
+                            <h3>🎨 Diseño gráfico</h3>
+                            <p>Logotipos, flyers, afiches, tarjetas personales y catálogos digitales.</p><span
+                                class="price">Desde Bs. 50</span>
+                            <div class="card-actions"><a class="btn purple" href="#contacto"
+                                    onclick="seleccionarServicio('Diseño gráfico')">Solicitar servicio</a></div>
+                        </div>
+                    </article>
+                    <article class="card"><img
+                            src="https://images.unsplash.com/photo-1557838923-2985c318be48?auto=format&fit=crop&w=700&q=85"
+                            alt="Publicidad digital">
+                        <div class="card-body">
+                            <h3>📢 Publicidad digital</h3>
+                            <p>Anuncios, promociones y publicaciones para dar a conocer tu negocio.</p><span
+                                class="price">Desde Bs. 80</span>
+                            <div class="card-actions"><a class="btn purple" href="#contacto"
+                                    onclick="seleccionarServicio('Publicidad digital')">Solicitar servicio</a></div>
+                        </div>
+                    </article>
+                    <article class="card"><img
+                            src="https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?auto=format&fit=crop&w=700&q=85"
+                            alt="Contenido para redes sociales">
+                        <div class="card-body">
+                            <h3>📱 Crear contenido</h3>
+                            <p>Contenido creativo para Facebook, Instagram, TikTok y otras redes.</p><span
+                                class="price">Desde Bs. 100</span>
+                            <div class="card-actions"><a class="btn purple" href="#contacto"
+                                    onclick="seleccionarServicio('Crear contenido')">Solicitar servicio</a></div>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <section id="negocios">
+                <div class="section-head">
+                    <h2> Negocios publicados</h2>
+                    <p>Busca tiendas, restaurantes, servicios y emprendimientos en un solo lugar.</p>
+                </div>
+                <div class="toolbar">
+                    <input id="buscar" type="search" placeholder="🔎 Buscar negocio, producto o servicio..."
+                        aria-label="Buscar negocios">
+                    <select id="filtroCategoria" aria-label="Filtrar por categoría">
+                        <option value="">Todas las categorías</option>
+                        <option>Restaurante y comida</option>
+                        <option>Ropa y accesorios</option>
+                        <option>Belleza y cuidado personal</option>
+                        <option>Tecnología</option>
+                        <option>Servicios profesionales</option>
+                        <option>Otros</option>
+                    </select>
+                    <button class="btn black" onclick="irA('publicar')"> Subir negocio</button>
+                </div>
+                <div id="listaNegocios" class="grid"></div>
+                <p class="form-note">Los negocios que agregues en esta demostración se mostrarán en este directorio.</p>
+            </section>
+
+            <section id="publicar">
+                <div class="section-head">
+                    <h2> Publica tu negocio</h2>
+                    <p>Completa los datos para crear una tarjeta que los clientes puedan ver en la sección de negocios.
+                    </p>
+                </div>
+                <div class="panel">
+                    <form id="formNegocio">
+                        <div class="form-grid">
+                            <div class="field"><label for="nombreNegocio">Nombre del negocio *</label><input
+                                    id="nombreNegocio" required maxlength="70"
+                                    placeholder="Ej. Restaurante Sabor Andino"></div>
+                            <div class="field"><label for="categoriaNegocio">Categoría *</label><select
+                                    id="categoriaNegocio" required>
+                                    <option value="">Selecciona una categoría</option>
+                                    <option>Restaurante y comida</option>
+                                    <option>Ropa y accesorios</option>
+                                    <option>Belleza y cuidado personal</option>
+                                    <option>Tecnología</option>
+                                    <option>Servicios profesionales</option>
+                                    <option>Otros</option>
+                                </select></div>
+                            <div class="field"><label for="propietario">Nombre de contacto *</label><input
+                                    id="propietario" required maxlength="70"
+                                    placeholder="Nombre de la persona encargada"></div>
+                            <div class="field"><label for="telefonoNegocio">WhatsApp o teléfono *</label><input
+                                    id="telefonoNegocio" required inputmode="tel" placeholder="Ej. 59170000000"></div>
+                            <div class="field full"><label for="descripcionNegocio">Descripción del negocio
+                                    *</label><textarea id="descripcionNegocio" required maxlength="450"
+                                    placeholder="Describe tus productos, servicios, ofertas u horarios..."></textarea>
+                            </div>
+                            <div class="field"><label for="ubicacionNegocio">Ubicación</label><input
+                                    id="ubicacionNegocio" maxlength="100" placeholder="Ej. Viacha, zona o calle"></div>
+                            <div class="field"><label for="precioNegocio">Precio o promoción (opcional)</label><input
+                                    id="precioNegocio" maxlength="70" placeholder="Ej. Menús desde Bs. 20"></div>
+                            <div class="field full"><label for="fotoNegocio">Foto del negocio (opcional)</label><input
+                                    id="fotoNegocio" type="file" accept="image/*"><span class="muted">Elige una imagen
+                                    de tu dispositivo. Para esta demostración, usa una imagen pequeña.</span></div>
+                        </div>
+                        <p class="form-note">Al publicar, confirmas que tienes permiso para compartir estos datos e
+                            imágenes.</p>
+                        <div class="form-actions"><button type="submit" class="btn black">📢 Publicar
+                                negocio</button><button type="reset" class="btn"
+                                style="background:#eee;color:#333">Limpiar formulario</button></div>
+                        <div id="avisoPublicacion" class="toast" role="status"></div>
+                    </form>
+                </div>
+            </section>
+
+            <section id="como-funciona">
+                <div class="section-head">
+                    <h2>¿Cómo funciona?</h2>
+                    <p>Un espacio sencillo para conectar negocios con clientes.</p>
+                </div>
+                <div class="info-grid">
+                    <div class="info">
+                        <h3>1. 📝 El negocio se registra</h3>
+                        <p>El emprendedor completa el formulario con el nombre, categoría, descripción y contacto.</p>
+                    </div>
+                    <div class="info">
+                        <h3>2. 🏪 Aparece publicado</h3>
+                        <p>El negocio se muestra como una tarjeta dentro de “Negocios publicados” y se puede buscar por
+                            nombre o categoría.</p>
+                    </div>
+                    <div class="info">
+                        <h3>3. 💬 El cliente contacta</h3>
+                        <p>El visitante revisa la información y puede tocar el botón de WhatsApp para consultar
+                            directamente.</p>
+                    </div>
+                </div>
+                <div class="notice"><strong>Importante:</strong> esta versión guarda los negocios en el navegador y
+                    dispositivo donde se publican. Para que un negocio publicado por una persona aparezca
+                    automáticamente en los teléfonos de todos los clientes a través de internet, hace falta conectar la
+                    página a una base de datos y alojarla en línea. Esta versión es una demostración funcional local, no
+                    un directorio compartido en tiempo real.</div>
+            </section>
+
+            <section id="contacto">
+                <div class="section-head">
+                    <h2>Contacta a Viacha Conecta</h2>
+                    <p>¿Quieres diseño, publicidad o ayuda para promocionar tu emprendimiento?</p>
+                </div>
+                <div class="panel">
+                    <form id="formContacto">
+                        <div class="form-grid">
+                            <div class="field"><label for="nombreContacto">Tu nombre *</label><input id="nombreContacto"
+                                    required placeholder="Escribe tu nombre"></div>
+                            <div class="field"><label for="servicioContacto">Servicio que necesitas *</label><select
+                                    id="servicioContacto" required>
+                                    <option value="">Selecciona un servicio</option>
+                                    <option>Diseño gráfico</option>
+                                    <option>Publicidad digital</option>
+                                    <option>Crear contenido</option>
+                                    <option>Publicar mi negocio</option>
+                                    <option>Otro</option>
+                                </select></div>
+                            <div class="field full"><label for="mensajeContacto">Mensaje *</label><textarea
+                                    id="mensajeContacto" required placeholder="Cuéntanos qué necesitas..."></textarea>
+                            </div>
+                        </div>
+                        <div class="form-actions"><button class="btn green" type="submit">Enviar por WhatsApp</button>
+                        </div>
+                    </form>
+                </div>
+            </section>
+        </main>
+    </div>
+    <footer><strong>Viacha Conecta</strong><br>Conectamos ideas, diseñamos soluciones.<br><small>© <span
+                id="year"></span> Viacha Conecta</small></footer>
+    <a class="whatsapp-float"
+        href="https://wa.me/59171981907?text=Hola%20Viacha%20Conecta%2C%20quiero%20informaci%C3%B3n." target="_blank"
+        rel="noopener">💬 WhatsApp</a>
+<script src="script.js"></script>
+
+</body>
+
+</html>
